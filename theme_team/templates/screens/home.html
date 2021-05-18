@@ -1,0 +1,53 @@
+{% extends '../base.html' %}
+<!--  -->
+{% block page_title %} HOME {% endblock page_title%}
+
+<!--  -->
+{% block content %} {% load tailwind_tags %} {% tailwind_css %}
+
+    <section class="w-full flex flex-col items-center justify-center mt-10 shadow-lg">
+        <div class="bg-white w-3/4 h-auto mb-20" >
+            <img src="https://i.imgur.com/G2ygcmv.jpg"/>
+        </div>
+
+        <div class="text-white mb-20 flex flex-col items-center justify-center">
+            <p class="text-2xl">Team Of Special And Professional Developers</p>
+            <div class="w-96 h-1 bg-gray-600 rounded-xl mt-8"></div>
+            <p class="text-5xl mt-6">D.D Coders</p>
+        </div>
+    </section>
+
+    <section class="w-full mb-20 flex flex-row items-center justify-around relative">
+        <p class="absolute text-gray-300 text-7xl top-3 left-20 text-opacity-30">D E V E L O P E R</p>
+        <p class="absolute text-gray-300 text-5xl bottom-3 right-20 text-opacity-30">C O D E</p>
+        <div class="w-2/5 h-auto">
+            <img class="object-cover" src="https://edynamiclearning.com/wp-content/uploads/2019/04/EDL105-Coding_1b-1.jpg"/>
+        </div>
+        <div class="w-2/5 h-auto">
+            <img class="object-cover" src="https://edynamiclearning.com/wp-content/uploads/2019/04/EDL105-Coding_1b-1.jpg"/>
+        </div>
+    </section>
+
+    <section class="mt-60 w-full flex flex-col items-center jusitfy-center mb-40">
+        <div class="w-3/5 h-96 bg-black bg-opacity-30 text-white p-24 relative">
+
+            <div class="absolute w-56 h-96 bg-indigo-300 -bottom-20 -right-20 bg-opacity-20 p-6 flex flex-col items-center justify-around">
+                <p class="text-xl ">W E B</p>
+                <p class="text-xl ">M O B I L E</p>
+                <p class="text-xl ">S Y S T E M</p>
+                <p class="text-xl ">A I</p>
+                <p class="text-xl ">P L A T F O R M</p>
+            </div>
+
+            <h2 class="text-5xl mb-20">🐳 Dummy Title</h2>
+            <ul class="text-xl list-decimal pl-12">
+                <li>Dummy Text Data</li>
+                <li>Dummy Text Data</li>
+                <li>Dummy Text Data</li>
+                <li>Dummy Text Data</li>
+            </ul>
+        </div>
+        
+    </section>
+
+{% endblock content %}

@@ -45,7 +45,7 @@ class DocBoardModel(models.Model):
     )
 
     title = models.CharField(max_length=200)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, related_name="doc_board", on_delete=models.CASCADE)
     description = models.TextField()
     board_type = models.CharField(choices=CHOICE_TYPE, max_length=40)
     like_count = models.IntegerField(default=0)

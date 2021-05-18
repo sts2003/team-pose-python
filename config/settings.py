@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import db_settings
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,6 +28,12 @@ SECRET_KEY = "django-insecure-_irqjn^(v%x_kffrmyx8d8=e4kwoh=s7p(69v-4taxtc0*kb0_
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+TAILWIND_APP_NAME = "theme_team"
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
 
 
 # Application definition
@@ -44,6 +51,9 @@ PROJECT_APPS = [
     "members.apps.MembersConfig",
     "portfolios.apps.PortfoliosConfig",
     "doc_boards.apps.DocBoardsConfig",
+    "tailwind",
+    "theme_team",
+    "fontawesome_5",
 ]
 
 PART_APPS = [
@@ -67,7 +77,7 @@ ROOT_URLCONF = "config.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR, "theme_team/templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -86,12 +96,7 @@ WSGI_APPLICATION = "config.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
+DATABASES = db_settings.DATABASE
 
 
 # Password validation
