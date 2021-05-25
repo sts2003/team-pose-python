@@ -6,8 +6,32 @@
     
 
 {% block content %} {% load tailwind_tags %} {% tailwind_css %}
-<h4> Hello I'm List Page</h4>
+
+{% for mem in members %}
+
+
+{% if mem.isEven %}
+<section class="w-full h-96 bg-white bg-opacity-20 flex flex-row text-white p-60">
+{% else %}
+<section class="w-full h-96 bg-white bg-opacity-30 flex flex-row-reverse text-white p-60">
+{% endif %}
+    <div class="w-2/4 h-full flex flex-col items-center justify-center">
+        <img class="rounded-full" src="http://blog.creation.net/wp-content/uploads/1/cfile5.uf.116E463E4FA0284A169743.jpg"/>
+        <p>{{mem.name}}</p>
+        <p>{{mem.birth}}/{{mem.gender}}</p>
+        <p>{{mem.mobile}}</p>
+        <p>{{mem.email}}</p>
+    </div>
+    <div class="w-2/4 h-full flex flex-col items-center justify-center">
+        <ul>
+            {% for s in mem.skills.all %}
+                <li>{{s}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+{% endfor %}
+
 {% endblock content %}
     
-
-
